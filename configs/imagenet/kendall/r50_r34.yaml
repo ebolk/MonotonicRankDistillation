@@ -1,0 +1,28 @@
+EXPERIMENT:
+  NAME: ""
+  TAG: "kendal_imagenet,res50,res34"
+  PROJECT: "imagenet_baselines"
+DATASET:
+  TYPE: "imagenet"
+  NUM_WORKERS: 32
+  TEST:
+    BATCH_SIZE: 128
+DISTILLER:
+  TYPE: "EMD"
+  TEACHER: "ResNet50"
+  STUDENT: "ResNet34"
+SOLVER:
+  BATCH_SIZE: 512
+  EPOCHS: 100
+  LR: 0.1
+  LR_DECAY_STAGES: [30, 60, 90]
+  LR_DECAY_RATE: 0.1
+  WEIGHT_DECAY: 0.0001
+  MOMENTUM: 0.9
+  TYPE: "SGD"
+LOG:
+  TENSORBOARD_FREQ: 50
+  SAVE_CHECKPOINT_FREQ: 10
+
+
+

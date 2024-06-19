@@ -1,0 +1,23 @@
+EXPERIMENT:
+  NAME: ""
+  TAG: "adaptivedkd,res32x4,res8x4,modifed"
+  PROJECT: "cifar100_baselines"
+DISTILLER:
+  TYPE: "adaptiveDKD"
+  TEACHER: "resnet32x4"
+  STUDENT: "resnet8x4"
+DATASET:
+    TEST:
+      BATCH_SIZE: 1024
+SOLVER:
+  BATCH_SIZE: 256
+  EPOCHS: 240
+  LR: 0.08
+  LR_DECAY_STAGES: [150, 180, 210]
+  LR_DECAY_RATE: 0.1
+  WEIGHT_DECAY: 0.0005
+  MOMENTUM: 0.9
+  TYPE: "SGD"
+DKD:
+  ALPHA: 1.5
+  BETA: 8.0

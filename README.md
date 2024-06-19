@@ -64,10 +64,6 @@ pip install -e .
 
 1. Evaluation
 
-- You can evaluate the performance of our models or models trained by yourself.
-
-- Our models are at <https://github.com/megvii-research/mdistiller/releases/tag/checkpoints>, please download the checkpoints to `./download_ckpts`
-
 - If test the models on ImageNet, please download the dataset at <https://image-net.org/> and put them to `./data/imagenet`
 
   ```bash
@@ -83,10 +79,9 @@ pip install -e .
 
 2. Training on CIFAR-100
 
-- Download the `cifar_teachers.tar` at <https://github.com/megvii-research/mdistiller/releases/tag/checkpoints> and untar it to `./download_ckpts` via `tar xvf cifar_teachers.tar`.
 
   ```bash
-  # for instance, our DKD method.
+  # for instance, our method.
   python3 tools/train.py --cfg configs/cifar100/kendall/res32x4_res8x4.yaml
   
   # you can also change settings at command line
@@ -98,8 +93,8 @@ pip install -e .
 - Download the dataset at <https://image-net.org/> and put them to `./data/imagenet`
 
   ```bash
-  # for instance, our DKD method.
-  python3 tools/train.py --cfg configs/imagenet/r34_r18/kendall.yaml
+  # for instance, our method.
+  python3 tools/train.py --cfg configs/imagenet/kendall/r34_r18.yaml
   ```
 
 4. Extension: Visualizations
@@ -138,10 +133,3 @@ pip install -e .
 
 MDistiller is released under the MIT license. See [LICENSE](LICENSE) for details.
 
-# Acknowledgement
-
-- Thanks for CRD and ReviewKD. We build this library based on the [CRD's codebase](https://github.com/HobbitLong/RepDistiller) and the [ReviewKD's codebase](https://github.com/dvlab-research/ReviewKD).
-
-- Thanks Yiyu Qiu and Yi Shi for the code contribution during their internship in MEGVII Technology.
-
-- Thanks Xin Jin for the discussion about DKD.
